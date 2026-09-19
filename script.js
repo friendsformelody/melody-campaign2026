@@ -105,3 +105,43 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
+// 5. Drug Trafficking Modal
+const drugBtn = document.getElementById('drug-btn');
+const issueModal = document.createElement('div');
+issueModal.className = 'issue-info';
+issueModal.innerHTML = `
+    <h3>Drug Trafficking</h3>
+    <div class="issue-info-content">
+        <p>Utah has a serious drug-trafficking problem and we need to talk about what it means for our communities.</p>
+        
+        <p>The U.S. Drug Enforcement Administration (DEA) has specifically identified Utah—through Interstates 15 and 80—as a corridor for illegal drugs being trafficked north and east.</p>
+        
+        <p>In 2025, approximately 2 million fentanyl pills were seized in Utah, double the previous year's total.</p>
+        
+        <p>But statistics don't tell the whole story.</p>
+        
+        <p>I'm a hairdresser here in our community. I spend my days talking with people and, more importantly, listening to what is on their minds and what their families, children, and friends are going through. I've heard firsthand about struggles with addiction, financial pressures, and families trying desperately to help someone they love.</p>
+        
+        <button class="close-btn">✕</button>
+    </div>
+`;
+
+document.body.appendChild(issueModal);
+
+// Open modal
+drugBtn.addEventListener('click', function() {
+    issueModal.classList.add('active');
+});
+
+// Close modal
+const closeBtn = issueModal.querySelector('.close-btn');
+closeBtn.addEventListener('click', function() {
+    issueModal.classList.remove('active');
+});
+
+// Close modal when clicking outside the content area
+issueModal.addEventListener('click', function(e) {
+    if (e.target === issueModal) {
+        issueModal.classList.remove('active');
+    }
+});

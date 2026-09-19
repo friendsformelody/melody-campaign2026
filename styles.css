@@ -485,3 +485,67 @@ footer p {
 .issue-info.active {
     display: flex;
 }
+/* Issue info modal - fully styled to match your patriotic red/blue theme */
+.issue-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    max-width: 700px;
+    width: 90%;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    display: none;
+    flex-direction: column;
+    max-height: 85vh;
+    overflow: hidden;
+}
+
+.issue-info h3 {
+    padding: 1.5rem 2rem 0;
+    color: #cc0000;
+    font-size: 1.8rem;
+    border-bottom: 3px solid #cc0000;
+    margin: 0;
+}
+
+.issue-info-content {
+    padding: 2rem;
+    overflow-y: auto;
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+.issue-info-content p {
+    margin-bottom: 1.5rem;
+}
+
+.issue-info .close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #cc0000;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.issue-info.active {
+    display: flex;
+}
+
+/* Extra polish so it looks native to your site */
+.issue-info-content p:last-of-type {
+    margin-bottom: 0;
+}
