@@ -392,4 +392,96 @@ footer p {
     font-size: 1.2rem;
     text-align: center;
     color: #003366;
+    transition: all 0.3s ease;
+}
+
+.issues-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Drug Trafficking button */
+.drug-item {
+    background: linear-gradient(135deg, #cc0000, #8b0000);
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.drug-item::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 60%;
+    height: 60%;
+    background: rgba(255, 215, 0, 0.15);
+    transform: rotate(45deg);
+    animation: shine 4s infinite linear;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-150%) rotate(45deg); }
+    100% { transform: translateX(150%) rotate(45deg); }
+}
+
+/* Info box */
+.issue-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    max-width: 700px;
+    width: 90%;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    display: none;
+    flex-direction: column;
+    max-height: 85vh;
+    overflow: hidden;
+}
+
+.issue-info h3 {
+    padding: 1.5rem 2rem 0;
+    color: #cc0000;
+    font-size: 1.8rem;
+    border-bottom: 3px solid #cc0000;
+    margin: 0;
+}
+
+.issue-info-content {
+    padding: 2rem;
+    overflow-y: auto;
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+.issue-info-content p {
+    margin-bottom: 1.5rem;
+}
+
+.issue-info .close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #cc0000;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.issue-info.active {
+    display: flex;
 }
