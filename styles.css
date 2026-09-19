@@ -338,3 +338,41 @@ footer p {
         margin: 0 auto;
     }
 }
+/* New About Melody styling */
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.accent-line {
+    flex-shrink: 0;
+    width: 4px;
+    background: linear-gradient(#cc0000, #ffd700); /* red to gold */
+    border-radius: 9999px;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive on mobile */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .accent-line {
+        width: 3px;
+        align-self: flex-start;
+    }
+}
